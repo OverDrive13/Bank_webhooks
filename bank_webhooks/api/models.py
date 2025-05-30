@@ -134,11 +134,7 @@ class Payment(models.Model):
         ]
 
     def __str__(self):
-        return _('Платеж №%(doc_num)s на %(amount)s руб. от %(inn)s') % {
-            'doc_num': self.document_number,
-            'amount': self.amount,
-            'inn': self.payer_inn
-        }
+        return _(f'Платеж №{self.document_number} на {self.amount} руб. от {self.payer_inn}')
 
     def clean(self):
         """Дополнительная валидация модели."""
